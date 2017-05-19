@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 /**
  * Created by avvos on 19.05.2017.
@@ -13,9 +15,25 @@ import android.view.ViewGroup;
 
 
 public class Fragment1 extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment1,container,false);
+
+
+        View view = inflater.inflate(R.layout.activity_main, container,false);
+
+        String[] foods = {"Salam", "Sucuk", "patates"};
+
+        ListAdapter foodAdapter = new customAdapter(getActivity(),foods);
+
+        ListView hamzasListView = (ListView) view.findViewById(R.id.hamzasListView);
+
+
+
+        hamzasListView.setAdapter(foodAdapter);
+
+        return view;
+
     }
 }

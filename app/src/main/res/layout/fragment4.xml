@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/textView34"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ayip" />
+        android:text="Alican" />
 </LinearLayout>

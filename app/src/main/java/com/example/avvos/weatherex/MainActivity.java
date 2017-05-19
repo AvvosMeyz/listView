@@ -1,26 +1,13 @@
 package com.example.avvos.weatherex;
 
 import android.content.Context;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.PagerAdapter;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
-import android.view.View;
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,29 +45,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        String[] foods = {"Salam", "Sucuk", "patates"};
-
-        ListAdapter foodAdapter = new customAdapter(this, foods);
-
-        ListView hamzasListView = (ListView) findViewById(R.id.hamzasListView);
-
-        hamzasListView.setAdapter(foodAdapter);
-
-        hamzasListView.setOnItemClickListener(
-                new AdapterView.OnItemClickListener(){
-
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        String food = String.valueOf(parent.getItemAtPosition(position));
-                        Toast.makeText(MainActivity.this, food, Toast.LENGTH_LONG).show();
-                    }
-                }
-        );
 
     }
 
     private class CustomAdapter2 extends FragmentPagerAdapter {
-        private String fragments [] = {"Fragment 1 ", "Fragment 2"};
+        private String fragments [] = {"Paragliding ", "Kite-Surfing", "Climbing", "Skiing"};
         public CustomAdapter2(FragmentManager supportFragmentManager, Context applicationContext) {
             super(supportFragmentManager);
         }
@@ -92,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
                     return new Fragment1();
                 case 1:
                     return new Fragment2();
+                case 2:
+                    return new Fragment3();
+                case 3:
+                    return new Fragment4();
                 default:
                     return null;
             }
